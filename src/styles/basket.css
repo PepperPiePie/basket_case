@@ -1,0 +1,46 @@
+.basket-list {
+   background-color: #25252c;
+   display: flex;
+   flex-flow: column;
+}
+
+.basket-button {
+   background: none;
+   border: none;
+   color: inherit;
+   font-size: 1.5rem;
+   width: 50%;
+   padding-bottom: 1rem;
+   align-self: center;
+   margin-top: 140px;
+   user-select: none;
+   cursor: pointer;
+}
+
+.basket-button:focus {
+   outline: 0;
+}
+
+#empty {
+   margin: 0 2rem;
+   text-align: center;
+}
+
+#total-cost {
+   margin: 2rem;
+   text-transform: uppercase;
+   font-weight: 800;
+}
+
+.basket-item {
+   margin: 0 2rem;
+   border-bottom: 1px solid rgb(142, 148, 202);
+}
+
+.backet-item .text{
+   margin: 0.25rem 0;
+}
+.basket-item span {
+   padding-right: 1rem;
+   margin-bottom: 0.25rem;
+}

@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300i,400,400i,700,700i,900,900i&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #3e3e49;
+  color: rgb(142, 148, 202);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+}
+
+.close-basket {
+  grid-template: "title basket" 120px "main basket" 1fr / 1fr 80px;
+}
+
+.open-basket {
+  grid-template: "title basket" 120px "main basket" 1fr / 60% 40%;
+}
+
+.header {
+  text-align: center;
+  grid-area: title;
+}
+
+.content {
+  display: contents;
+}
+.product-list {
+  grid-area: main;
+}
+
+.basket-list {
+  grid-area: basket;
+  z-index: 100;
+}

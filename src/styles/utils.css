@@ -1,0 +1,16 @@
+.counter {
+   margin: 1rem 0;
+   display: flex;
+   align-content: center;
+}
+.counter-button {
+   margin: 0 0.5rem;
+   font-size: 1.1rem;
+   user-select: none;
+   cursor: pointer;
+}
+.counter-amount {
+   padding-left: 0.1rem;
+   font-weight: 800;
+   user-select: none;
+}
