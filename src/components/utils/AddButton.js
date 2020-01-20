@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../styles/navigation.css";
+import "../../styles/navigation.css";
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -34,7 +34,7 @@ const AddButton = props => {
       found
       ? updateBasket(amount)
       : setBasket( [...basket, {productName, productPrice, amount}]);
-      resetAmount();
+      resetAmount && resetAmount();
    }
 
    return(

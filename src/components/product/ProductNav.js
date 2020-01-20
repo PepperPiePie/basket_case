@@ -3,7 +3,7 @@ import { useState } from 'react';
 import "../../styles/navigation.css";
 
 import Counter from '../../components/utils/Counter';
-import AddButton from '../AddButton';
+import AddButton from '../../components/utils/AddButton';
 
 const ProductNav = props => {
 

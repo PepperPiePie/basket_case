@@ -9,16 +9,10 @@
    border: none;
    color: inherit;
    font-size: 1.5rem;
-   width: 50%;
-   padding-bottom: 1rem;
-   align-self: center;
-   margin-top: 140px;
+   margin: 140px 1rem 1rem 1rem;
+   align-self: flex-end;
    user-select: none;
    cursor: pointer;
-}
-
-.basket-button:focus {
-   outline: 0;
 }
 
 #empty {
@@ -34,13 +28,28 @@
 
 .basket-item {
    margin: 0 2rem;
+   padding-bottom: 1rem;
    border-bottom: 1px solid rgb(142, 148, 202);
 }
 
-.backet-item .text{
+.basket-item .text{
    margin: 0.25rem 0;
+   color: rgb(132, 240, 220);
 }
-.basket-item span {
-   padding-right: 1rem;
-   margin-bottom: 0.25rem;
+
+.basket-item .nav {
+   display: flex;
 }
+
+.basket-item .button {
+   margin: 0 1rem;
+   user-select: none;
+   cursor: pointer;
+   background: none;
+   border: none;
+   color: inherit;
+   font-size: 1.1rem;
+   font-weight: 600;
+}
+
+

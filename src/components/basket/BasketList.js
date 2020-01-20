@@ -1,31 +1,41 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
+
 import BasketItem from './BasketItem';
 
 const BasketList = props => {
 
    const { basket, setBasket} = props;
+   const [ totalCost, setTotalCost ] = useState();
 
-   const renderBucketList = () => {
+   useEffect( () => {
+      let newTotalCost = 0;
+      basket.forEach( elm => {
+         newTotalCost += elm.amount*elm.productPrice;
+      });
+      setTotalCost(newTotalCost)
+   }, [basket]);
+
+   const renderBasketList = () => {
       return (
          <>
          {basket.map( elm => 
             <BasketItem 
-               title={elm.productName} 
+               productName={elm.productName} 
                amount={elm.amount}
-               price={elm.productPrice}
+               productPrice={elm.productPrice}
                setBasket={setBasket}
+               basket={basket}
             />
          )}
-         {/* <p id="total-cost">Total cost: </p> */}
+         <p id="total-cost">Total cost: {totalCost}</p>
          </>
       )
    }
 
-   console.log(basket, basket.length);
-
    return(
       <>
-         {basket.length>0 ? renderBucketList() : <p id="empty">Your basket is empty</p>}
+         {basket.length>0 ? renderBasketList() : <p id="empty">Your basket is empty</p>}
       </>
    );
 }
