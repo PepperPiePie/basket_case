@@ -6,12 +6,11 @@ import Basket from '../components/basket/Basket';
 
 const MainPage = props => {
 
-   const { products, basket, setBasket, toggleBasket, showBasket } = props;
+   const { basket, setBasket, toggleBasket, showBasket } = props;
 
    return(
       <>
          <ProductList 
-            products={products} 
             setBasket={setBasket} 
             basket={basket} />
          <Basket 

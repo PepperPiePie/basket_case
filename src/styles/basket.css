@@ -4,7 +4,7 @@
    flex-flow: column;
 }
 
-.basket-button {
+.basket-open {
    background: none;
    border: none;
    color: inherit;
@@ -21,35 +21,39 @@
 }
 
 #total-cost {
-   margin: 2rem;
+   padding: 1.5rem 0;
+   margin: 0 2rem;
    text-transform: uppercase;
    font-weight: 800;
+
+   text-align: center;
+   background-color: rgba(142, 148, 202, 0.9);
+   color: #3e3e49;
 }
 
 .basket-item {
+   font-size: 14px;
    margin: 0 2rem;
-   padding-bottom: 1rem;
-   border-bottom: 1px solid rgb(142, 148, 202);
+   padding: 1rem;
+}
+
+.basket-item:nth-child(even) {
+   background-color: rgba(142, 148, 202, 0.15);
 }
 
 .basket-item .text{
-   margin: 0.25rem 0;
+   margin: 0.5rem 0;
    color: rgb(132, 240, 220);
+}
+
+.basket-item .info {
+   display: flex;
+   justify-content: space-between;
 }
 
 .basket-item .nav {
    display: flex;
-}
-
-.basket-item .button {
-   margin: 0 1rem;
-   user-select: none;
-   cursor: pointer;
-   background: none;
-   border: none;
-   color: inherit;
-   font-size: 1.1rem;
-   font-weight: 600;
+   justify-content: center;
 }
 
 

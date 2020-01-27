@@ -5,18 +5,19 @@ import ProductNav from './ProductNav';
 
 const Product = props => {
 
-   const { key, title, author, image, price, basket, setBasket } = props;
+   const { productId, productName, productAuthor, image, productPrice, basket, setBasket } = props;
 
    return (
-      <div key={key} className="product">
-         <img className="product-img" alt={title} src={image}/>
-         <p className="product-name">{title} <br/> by {author}</p>
-         <p className="product-price">Price: {price} $</p>
+      <div className="product">
+         <img className="product-img" alt={productName} src={image}/>
+         <p className="product-name">{productName} <br/> by {productAuthor}</p>
+         <p className="product-price">Price: {productPrice} $</p>
          <ProductNav 
             basket={basket}
             setBasket={setBasket} 
-            productName={title} 
-            productPrice={price} />
+            productId={productId}
+            productName={productName} 
+            productPrice={productPrice} />
       </div>
    )
 }

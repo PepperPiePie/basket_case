@@ -7,7 +7,7 @@ import AddButton from '../../components/utils/AddButton';
 
 const ProductNav = props => {
 
-   const { basket, setBasket, productName, productPrice } = props;
+   const { basket, setBasket, productId, productName, productPrice } = props;
    const [ amount, setAmount] = useState(1);
 
    const resetAmount = () => {
@@ -23,6 +23,7 @@ const ProductNav = props => {
             basket={basket}
             setBasket={setBasket} 
             amount={amount} 
+            productId={productId}
             productName={productName} 
             productPrice={productPrice} 
             resetAmount={resetAmount}/>

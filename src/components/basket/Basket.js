@@ -17,7 +17,7 @@ const Basket = props => {
    return(
       <>
          <div className="basket-list">
-         <button className="basket-button" onClick={toggleBasket}>
+         <button className="basket-open" onClick={toggleBasket}>
             {showBasket ? <FontAwesomeIcon icon="times"/> : <FontAwesomeIcon icon="shopping-cart"/>}
          </button>
          {showBasket ? <BasketList basket={basket} setBasket={setBasket} /> : null}         

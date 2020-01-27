@@ -1,31 +1,24 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import axios from 'axios';
 
 import MainPage from './components/MainPage';
 import NotFound from './components/utils/NotFound';
+import { ProductsContext } from './context/products-context';
 
 import './styles/App.css';
 
 const App = () => {
 
-  const API_KEY = "3If5G3vcIAo7p7kAkiFMZNCcEPC3yQ0n";
-
-  const [ products, setProducts ] = useState([]);
-  const [ fetching, setFetching ] = useState(true);
   const [ basket, setBasket ] = useState([]);
   const [ showBasket, setShowBasket ] = useState(false);
   
+  const productsContext = useContext(ProductsContext);
+  const { fetching } = productsContext;
+
   const toggleBasket = () => {
       setShowBasket(!showBasket);
   }
-
-  const fetchProducts = async () => {
-    const result = await axios(`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${API_KEY}`);
-    setProducts(result.data.results.books);
-    setFetching(false);
-  };
 
   const renderRoutes = () => {
     return (
@@ -33,8 +26,7 @@ const App = () => {
       <Route exact path={'/'}
         render={(props) =>
           <MainPage 
-            {...props} 
-            products={products} 
+            {...props}  
             basket={basket} 
             setBasket={setBasket} 
             toggleBasket={toggleBasket}
@@ -44,10 +36,6 @@ const App = () => {
     </Switch>
     )
 }
-
-  useEffect(() => {
-    fetchProducts()
-  }, [])
 
   return (
     <Router>

@@ -5,7 +5,7 @@ import BasketItem from './BasketItem';
 
 const BasketList = props => {
 
-   const { basket, setBasket} = props;
+   const { basket, setBasket, productId} = props;
    const [ totalCost, setTotalCost ] = useState();
 
    useEffect( () => {
@@ -21,6 +21,8 @@ const BasketList = props => {
          <>
          {basket.map( elm => 
             <BasketItem 
+               key={elm.productId}
+               productId={elm.productId}
                productName={elm.productName} 
                amount={elm.amount}
                productPrice={elm.productPrice}
@@ -28,7 +30,7 @@ const BasketList = props => {
                basket={basket}
             />
          )}
-         <p id="total-cost">Total cost: {totalCost}</p>
+         <p id="total-cost">Total cost: {totalCost}$</p>
          </>
       )
    }

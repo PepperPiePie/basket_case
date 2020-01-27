@@ -1,14 +1,3 @@
-.add-button {
-   background: none;
-   border: none;
-   color: inherit;
-   font-size: 1.5rem;
-   width: 50%;
-   padding-bottom: 1rem;
-   user-select: none;
-   cursor: pointer;
-}
-
 .product-nav {
    display: contents;
 }

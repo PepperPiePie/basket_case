@@ -1,16 +1,15 @@
 import * as React from "react";
 import "../../styles/navigation.css";
-import "../../styles/utils.css";
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faRedoAlt } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faShoppingCart);
+library.add(faRedoAlt);
 
-const AddButton = props => {
+const UpdateButton = props => {
 
-   const {  basket, setBasket, amount, productId, productName, productPrice, resetAmount } = props;
+   const { basket, setBasket, amount, productId, productName, productPrice } = props;
 
    const findInBasket = productId => {
       return basket.find( elm => elm.productId === productId)
@@ -22,7 +21,7 @@ const AddButton = props => {
       setBasket(
       basket.map( elm => {
          if (elm.productId === productId) {
-            let newAmount = elm.amount + amount
+            let newAmount = amount
             return {...elm, amount: newAmount}
          } else {
             return elm
@@ -34,15 +33,14 @@ const AddButton = props => {
       console.log(found);
       found
       ? updateBasket(amount)
-      : setBasket( [...basket, {productId, productName, productPrice, amount}]);
-      resetAmount && resetAmount();
+      : setBasket( [...basket, {productId, productName, productPrice, amount}]);;
    }
 
    return(
-      <button className="button add-button" onClick={handleBasket}>
-         <FontAwesomeIcon icon="shopping-cart"/>
+      <button className="button basket-button" onClick={handleBasket}>
+         <FontAwesomeIcon icon="redo-alt"/>
       </button>
    );
 }
 
-export default AddButton;
+export default UpdateButton;
