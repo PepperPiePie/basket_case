@@ -1,13 +1,13 @@
 import * as React from "react";
-import { useContext } from 'react';
-
 import Product from './Product';
+
+import { useContext } from 'react';
 import { ProductsContext } from '../../context/products-context';
+
 import '../../styles/product.css';
 
-const ProductList = props => {
+const ProductList = () => {
 
-   const { basket, setBasket } = props;
    
    const { products } = useContext(ProductsContext);
 
@@ -22,8 +22,6 @@ const ProductList = props => {
                   productAuthor={elm.author} 
                   image={elm.book_image}
                   productPrice={elm.weeks_on_list}
-                  basket={basket}
-                  setBasket={setBasket}
                />
             )}
          </div>

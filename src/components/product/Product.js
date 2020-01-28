@@ -5,7 +5,7 @@ import ProductNav from './ProductNav';
 
 const Product = props => {
 
-   const { productId, productName, productAuthor, image, productPrice, basket, setBasket } = props;
+   const { productId, productName, productAuthor, image, productPrice} = props;
 
    return (
       <div className="product">
@@ -13,8 +13,6 @@ const Product = props => {
          <p className="product-name">{productName} <br/> by {productAuthor}</p>
          <p className="product-price">Price: {productPrice} $</p>
          <ProductNav 
-            basket={basket}
-            setBasket={setBasket} 
             productId={productId}
             productName={productName} 
             productPrice={productPrice} />

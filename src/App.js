@@ -10,9 +10,7 @@ import './styles/App.css';
 
 const App = () => {
 
-  const [ basket, setBasket ] = useState([]);
   const [ showBasket, setShowBasket ] = useState(false);
-  
   const { fetching } = useContext(ProductsContext);
 
   const toggleBasket = () => {
@@ -26,8 +24,6 @@ const App = () => {
         render={(props) =>
           <MainPage 
             {...props}  
-            basket={basket} 
-            setBasket={setBasket} 
             toggleBasket={toggleBasket}
             showBasket={showBasket}/>}
       />

@@ -12,6 +12,7 @@ const ProductsProvider = props => {
    const [ fetching, setFetching ] = useState(true);
 
    const fetchProducts = async () => {
+      console.log("fetching");
       const result = await axios(url);
       setProducts(result.data.results.books);
       setFetching(false);

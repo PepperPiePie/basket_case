@@ -1,12 +1,13 @@
 import * as React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { BasketContext } from '../../context/basket-context';
 
 import BasketItem from './BasketItem';
 
-const BasketList = props => {
+const BasketList = () => {
 
-   const { basket, setBasket } = props;
    const [ totalCost, setTotalCost ] = useState();
+   const [ basket ] = useContext(BasketContext);
 
    useEffect( () => {
       let newTotalCost = 0;
@@ -19,15 +20,13 @@ const BasketList = props => {
    const renderBasketList = () => {
       return (
          <>
-         {basket && basket.map( elm => 
+         {basket.map( elm => 
             <BasketItem 
                key={elm.productId}
                productId={elm.productId}
                productName={elm.productName} 
                amount={elm.amount}
                productPrice={elm.productPrice}
-               setBasket={setBasket}
-               basket={basket}
             />
          )}
          <p id="total-cost">Total cost: {totalCost}$</p>

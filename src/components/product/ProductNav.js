@@ -1,13 +1,14 @@
 import * as React from "react";
 import { useState } from 'react';
-import "../../styles/navigation.css";
 
 import Counter from '../../components/utils/Counter';
 import AddButton from '../../components/utils/AddButton';
 
+import "../../styles/navigation.css";
+
 const ProductNav = props => {
 
-   const { basket, setBasket, productId, productName, productPrice } = props;
+   const { productId, productName, productPrice } = props;
    const [ amount, setAmount] = useState(1);
 
    const resetAmount = () => {
@@ -20,8 +21,6 @@ const ProductNav = props => {
             amount={amount} 
             updateAmount={setAmount} />
          <AddButton 
-            basket={basket}
-            setBasket={setBasket} 
             amount={amount} 
             productId={productId}
             productName={productName} 

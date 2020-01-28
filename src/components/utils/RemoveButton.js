@@ -1,4 +1,6 @@
 import * as React from "react";
+import { useContext } from "react";
+import { BasketContext } from '../../context/basket-context';
 import "../../styles/navigation.css";
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -9,7 +11,8 @@ library.add(faTrash);
 
 const RemoveButton = props => {
 
-   const { basket, setBasket, productId } = props;
+   const { productId } = props;
+   const [ basket, setBasket ] = useContext(BasketContext);
 
    const findInBasket = productId => {
       return basket.find( elm => elm.productId === productId)

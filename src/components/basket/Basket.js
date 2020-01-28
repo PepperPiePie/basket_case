@@ -12,7 +12,7 @@ library.add(faTimes);
 
 const Basket = props => {
 
-   const { toggleBasket, basket, setBasket, showBasket } = props;
+   const { toggleBasket, showBasket } = props;
 
    return(
       <>
@@ -20,7 +20,7 @@ const Basket = props => {
          <button className="basket-open" onClick={toggleBasket}>
             {showBasket ? <FontAwesomeIcon icon="times"/> : <FontAwesomeIcon icon="shopping-cart"/>}
          </button>
-         {showBasket ? <BasketList basket={basket} setBasket={setBasket} /> : null}         
+         {showBasket ? <BasketList /> : null}         
          </div>
       </>
    );

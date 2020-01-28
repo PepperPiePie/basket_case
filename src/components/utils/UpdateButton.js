@@ -1,4 +1,6 @@
 import * as React from "react";
+import { useContext } from "react";
+import { BasketContext } from '../../context/basket-context';
 import "../../styles/navigation.css";
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -9,8 +11,8 @@ library.add(faRedoAlt);
 
 const UpdateButton = props => {
 
-   const { basket, setBasket, amount, productId, productName, productPrice } = props;
-
+   const { amount, productId, productName, productPrice } = props;
+   const [ basket, setBasket ] = useContext(BasketContext);
    const findInBasket = productId => {
       return basket.find( elm => elm.productId === productId)
    }
@@ -30,7 +32,6 @@ const UpdateButton = props => {
    }
 
    const handleBasket = () => {
-      console.log(found);
       found
       ? updateBasket(amount)
       : setBasket( [...basket, {productId, productName, productPrice, amount}]);;
