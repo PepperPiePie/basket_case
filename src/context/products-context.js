@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
-const ProductsContext = React.createContext()
+const ProductsContext = createContext();
 const API_KEY = "3If5G3vcIAo7p7kAkiFMZNCcEPC3yQ0n";
 
-const ProductsProvider = (props) => {
+const ProductsProvider = props => {
 
    let url = `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${API_KEY}`
 

@@ -5,7 +5,7 @@ import BasketItem from './BasketItem';
 
 const BasketList = props => {
 
-   const { basket, setBasket, productId} = props;
+   const { basket, setBasket } = props;
    const [ totalCost, setTotalCost ] = useState();
 
    useEffect( () => {
@@ -19,7 +19,7 @@ const BasketList = props => {
    const renderBasketList = () => {
       return (
          <>
-         {basket.map( elm => 
+         {basket && basket.map( elm => 
             <BasketItem 
                key={elm.productId}
                productId={elm.productId}

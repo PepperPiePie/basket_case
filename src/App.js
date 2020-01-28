@@ -13,8 +13,7 @@ const App = () => {
   const [ basket, setBasket ] = useState([]);
   const [ showBasket, setShowBasket ] = useState(false);
   
-  const productsContext = useContext(ProductsContext);
-  const { fetching } = productsContext;
+  const { fetching } = useContext(ProductsContext);
 
   const toggleBasket = () => {
       setShowBasket(!showBasket);

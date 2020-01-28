@@ -19,7 +19,7 @@ const BasketItem = props => {
    return (
       <div className="basket-item">
          <div className="info">
-            <p className="text">{productName}</p>
+            <p className="text"><span>{amount} x</span>{productName}</p>
             <p className="text">Cost: {cost}$</p>  
          </div>
          <div className="nav">

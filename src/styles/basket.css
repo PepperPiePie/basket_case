@@ -51,6 +51,10 @@
    justify-content: space-between;
 }
 
+.basket-item .info span{
+   margin-right: 1rem;
+}
+
 .basket-item .nav {
    display: flex;
    justify-content: center;

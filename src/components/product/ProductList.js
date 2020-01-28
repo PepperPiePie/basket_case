@@ -9,8 +9,7 @@ const ProductList = props => {
 
    const { basket, setBasket } = props;
    
-   const productsContext = useContext(ProductsContext);
-   const { products } = productsContext;
+   const { products } = useContext(ProductsContext);
 
    return(
       <>
